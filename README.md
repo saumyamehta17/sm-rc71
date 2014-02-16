@@ -35,7 +35,7 @@ new gem intro
 Guard -- to automatically running the rspec when i save it and run 'guard init rspec' to create guard file
 capybara -- acceptence test framework with selenium support built in.
 factory_girls_rails - replacement of fixtures. a library for setting object as test data.
-run 'gem install rb-fsevent-0.4.1' -- so that guard can detect changes
+run 'bundle exec guard' -- so that guard can detect changes
 ```
 To generate new rspec file
 ```

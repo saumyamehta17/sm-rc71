@@ -43,7 +43,7 @@ describe PostsController do
       #post = Post.create! valid_attributes
       post = FactoryGirl.create(:post)
       post 'create'
-      flash[:notice].should_not be_nil
+      page.should have_content('saved successfully')
       response.should redirect_to(posts_path)
     end
 
