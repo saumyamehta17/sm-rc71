@@ -38,21 +38,30 @@ describe PostsController do
   #  end
   #end
   #
+
+  describe  'empty post' do
+    context "when first created" do
+       it 'is empty'do
+         post = Post.new
+         post.should be_new_record
+       end
+    end
+  end
   describe 'creating new post' do
     it 'redirect to index page with successful message' do
-      #post = Post.create! valid_attributes
       post = FactoryGirl.create(:post)
-      post 'create'
-      page.should have_content('saved successfully')
-      response.should redirect_to(posts_path)
+      post.should_not be_new_record
+      post.save
+      get :show, id: post.id
+      response.should render_template(:show)
     end
-
+  end
     #it 'redirect to new page woth error message' do
     #  post 'create'
     #  flash[:notice].should be_nil
     #  response.should render 'new'
     #end
-  end
+  #end
   #describe "GET show" do
   #  it "assigns the requested post as @post" do
   #    post = Post.create! valid_attributes

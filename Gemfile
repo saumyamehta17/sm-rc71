@@ -36,6 +36,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'guard-rspec'
+  gem 'launchy'
 end
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
