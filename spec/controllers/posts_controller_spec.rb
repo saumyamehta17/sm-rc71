@@ -54,8 +54,30 @@ describe PostsController do
       post.save
       get :show, id: post.id
       response.should render_template(:show)
+      response.status.should be(200)
     end
   end
+
+  describe 'checking posts on home page' do
+    it 'redirect to index page' do
+      post = FactoryGirl.create(:post)
+      visit posts_path
+      response.should render_template(:index)
+      #save_and_open_page
+      #debugger
+      #page.should have_content("William")
+    end
+  end
+
+  #describe  'posts display' do
+  # it 'create post' do
+  #   visit posts_path
+  #   click_link 'New Post'
+  #   #fill_in "Name", with: 'fornforth'
+  #   #click_button 'create'
+  #
+  # end
+  #end
     #it 'redirect to new page woth error message' do
     #  post 'create'
     #  flash[:notice].should be_nil
