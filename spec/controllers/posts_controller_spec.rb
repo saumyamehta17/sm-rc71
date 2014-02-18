@@ -47,6 +47,8 @@ describe PostsController do
        end
     end
   end
+
+
   describe 'creating new post' do
     it 'redirect to index page with successful message' do
       post = FactoryGirl.create(:post)
@@ -54,8 +56,10 @@ describe PostsController do
       post.save
       get :show, id: post.id
       response.should render_template(:show)
+      flash[:notice] = "Post was successfully created."
     end
   end
+
     #it 'redirect to new page woth error message' do
     #  post 'create'
     #  flash[:notice].should be_nil
