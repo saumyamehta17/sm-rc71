@@ -1,5 +1,5 @@
-Railscast sm-rc71
-===================
+Railscast sm-rc71 and 275 and 257
+================================
 RSpec
 ```
 It is a testing framework.
@@ -48,4 +48,8 @@ rails s
 Rails Console
 ```
 rails c
+```
+sm-rc257
+```
+is for views and javascript
 ```
